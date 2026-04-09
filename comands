@@ -4,3 +4,12 @@ pip install streamlit plotly scikit-learn pandas numpy
 
 streamlit run dashboard.py ИЛИ
 python -m streamlit run dushboard.py
+
+docket ps (docker run) - нужно скопировать CONTAINER ID где написано apache/airflow
+
+docker inspect <вставь id> | grep -A 5 “Source”
+
+docker cp C:\champion_project2\run_full_pipeline.py ID_контейнера:/opt/airflow/
+docker cp C:\champion_project2\train_model.py ID_контейнера:/opt/airflow/
+docker cp C:\champion_project2\data ID_контейнера:/opt/airflow/data
+docker cp C:\champion_project2\dags\traffic_pipeline.py ID_контейнера:/opt/airflow/dags/
