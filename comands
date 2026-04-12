@@ -1,0 +1,30 @@
+python -c "import sqlite3; conn-sqlite3.connect('data/traffic.db'); print'detections:', connexecute('SELECT COUNT(*) FROM detections' fetchone[O]); print'metrics:, connexecute('SELECT COUNT(*) FROM metrics'). fetchoneO[O]); conn.close()"
+
+pip install streamlit plotly scikit-learn pandas numpy
+
+streamlit run dashboard.py ИЛИ
+python -m streamlit run dushboard.py
+
+docket ps (docker run) - нужно скопировать CONTAINER ID где написано apache/airflow
+
+docker inspect <вставь id> | grep -A 5 “Source”
+
+Добавить монтирование в docker-compose.yaml:
+
+volumes:
+  - /home/твоё_имя/champion_project2:/opt/airflow/project
+  - /home/твоё_имя/champion_project2/dags:/opt/airflow/dag
+
+Перезапуск контейнеров: 
+docker-compose down
+docker-compose up -d
+
+docker-compose ps
+
+docker exec -it 
+
+имя_контейнера_airflow ls -la /opt/airflow/project
+
+docker exec -it имя_контейнера_airflow ls -la /opt/airflow/dags
+
+docker exec -it имя_контейнера_airflow pip install ultralytics opencv-python pandas numpy scikit-learn
